@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.screens.home.HomeActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_pokemon" />
+
+    <include
+        android:id="@+id/view_appbar"
+        layout="@layout/view_appbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_appbar">
+
+        <ViewAnimator
+            android:id="@+id/animator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_appbar">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_pokemon_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_pokemon_list" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/shimmer_pokemon_list" />
+
+                <include layout="@layout/shimmer_pokemon_list" />
+
+                <include layout="@layout/shimmer_pokemon_list" />
+
+                <include layout="@layout/shimmer_pokemon_list" />
+
+                <include layout="@layout/shimmer_pokemon_list" />
+
+                <include layout="@layout/shimmer_pokemon_list" />
+
+                <include layout="@layout/shimmer_pokemon_list" />
+
+                <include layout="@layout/shimmer_pokemon_list" />
+
+                <include layout="@layout/shimmer_pokemon_list" />
+
+                <include layout="@layout/shimmer_pokemon_list" />
+
+                <include layout="@layout/shimmer_pokemon_list" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="No Data Found"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+        </ViewAnimator>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
